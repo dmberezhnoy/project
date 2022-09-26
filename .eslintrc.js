@@ -21,6 +21,7 @@ module.exports = {
     'react',
     '@typescript-eslint',
     'i18next',
+    'simple-import-sort',
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -39,6 +40,21 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'simple-import-sort/exports': 'warn',
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          ['^react'],
+          ['^@?\\w'],
+          [
+            '^(api|components|consts|containers|hooks|icons|images|pages|types|utils|slices|ui-kit|hoc)(/.*|$)',
+          ],
+          ['^\\u0000'],
+        ],
+      },
+    ],
+
   },
   globals: {
     __IS_DEV__: true,

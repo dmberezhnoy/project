@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
-
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
-import { useTranslation } from 'react-i18next';
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+
 import cls from './Sidebar.module.scss';
 
 interface ISidebarProps {

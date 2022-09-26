@@ -2,5 +2,9 @@
   "Перевод": "Translate",
   "Язык": "Language",
   "Переключить": "Toggle",
-  "Загрузка": "Loading"
+  "Загрузка": "Loading",
+  "Страница не найдена": "Page not found",
+  "Перезагрузить страницу": "Reload page",
+  "Непредвиденная ошибка": "Unexpected error",
+  "Вернуться на главную": "Back to main page"
 }
