@@ -1,4 +1,6 @@
 /build
+/storybook-static
+
 node_modules
 .idea
 .loki
