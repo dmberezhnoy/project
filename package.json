@@ -8,10 +8,12 @@
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
     "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix",
-    "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
-    "unit": "jest --config ./config/jest/jest.config.ts",
+    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
+    "test:unit": "jest --config ./config/jest/jest.config.ts",
+    "test:screen": "npx loki test",
+    "test:screen:ok": "npx loki approve",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "build-storybook": "build-storybook -c ./config/storyboo"
+    "storybook:build": "build-storybook -c ./config/storyboo"
   },
   "keywords": [],
   "author": "",
