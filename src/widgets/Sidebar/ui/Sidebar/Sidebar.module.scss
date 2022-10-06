@@ -4,18 +4,46 @@
   background: var(--inverted-bg-color);
   position: relative;
   transition: width 0.3s;
-}
-
-.collapsed {
-  width: var(--sidebar-width-collapsed);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .switchers {
-  position: absolute;
-  bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  margin-bottom: 8px;
   width: 100%;
+}
+
+.collapseBtn {
+  position: absolute;
+  right: -40px;
+  bottom: 40px;
+}
+
+.linksWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  flex-grow: 1;
+
+  .linkItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.icon {
+  fill: var(--inverted-primary-color);
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
 }

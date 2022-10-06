@@ -17,8 +17,7 @@ export const Navbar: React.FC<INavbarProps> = ({ className }) => {
   return (
     <div className={classNames(cls.Navbar, {}, [className])}>
       <div className={cls.links}>
-        <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath[AppRoutes.MAIN]}>{t('Основная страница')}</AppLink>
-        <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath[AppRoutes.ABOUT]}>{t('О сайте')}</AppLink>
+        /
       </div>
     </div>
   );
