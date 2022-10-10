@@ -8,5 +8,7 @@
   "Непредвиденная ошибка": "Unexpected error",
   "Вернуться на главную": "Back to main page",
   "Основная страница": "Main page",
-  "О сайте": "About"
+  "О сайте": "About",
+  "Увеличить": "Increment",
+  "Уменьшить": "Decrement"
 }
