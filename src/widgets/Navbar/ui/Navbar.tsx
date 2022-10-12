@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { LoginModal } from 'features/AuthByUsername';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Modal } from 'shared/ui/Modal';
 
 import cls from './Navbar.module.scss';
 
@@ -27,11 +27,7 @@ export const Navbar: React.FC<INavbarProps> = ({ className }) => {
       >
         {t('Войти')}
       </Button>
-      <Modal isOpen={isOpenLoginForm} onClose={handleCloseLoginForm}>
-        {/* eslint-disable-next-line i18next/no-literal-string */}
-        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, nobis!</h1>
-      </Modal>
-
+      <LoginModal isOpen={isOpenLoginForm} onClose={handleCloseLoginForm} />
     </div>
   );
 };

@@ -10,5 +10,8 @@
   "Основная страница": "Main page",
   "О сайте": "About",
   "Увеличить": "Increment",
-  "Уменьшить": "Decrement"
+  "Уменьшить": "Decrement",
+  "Войти": "Sign in",
+  "Введите имя": "Input username",
+  "Введите пароль": "Input password"
 }
