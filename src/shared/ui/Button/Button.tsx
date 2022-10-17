@@ -37,6 +37,7 @@ export const Button: React.FC<IButtonProps> = (props) => {
 
   const classNameMods = {
     [cls.square]: square,
+    [cls.disabled]: restProps.disabled,
   };
 
   return (

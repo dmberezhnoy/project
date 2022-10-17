@@ -5,6 +5,8 @@
 
 import path from 'path';
 
+const esModules = ['lodash-es', 'axios'].join('|');
+
 export default {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -47,6 +49,8 @@ export default {
   globals: {
     __IS_DEV__: true,
   },
+  transformIgnorePatterns: [`node_modules/(?!(${esModules}))`],
+
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
 

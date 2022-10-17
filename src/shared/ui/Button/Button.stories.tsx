@@ -82,3 +82,18 @@ SquareBtnDarkSizeL.args = {
   square: true,
 };
 SquareBtnDarkSizeL.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const DisabledOutlineBtnLight = Template.bind({});
+DisabledOutlineBtnLight.args = {
+  children: 'button',
+  disabled: true,
+  theme: ButtonTheme.OUTLINE,
+};
+
+export const DisabledOutlineBtnDark = Template.bind({});
+DisabledOutlineBtnDark.args = {
+  children: 'button',
+  disabled: true,
+  theme: ButtonTheme.OUTLINE,
+};
+DisabledOutlineBtnDark.decorators = [ThemeDecorator(Theme.DARK)];

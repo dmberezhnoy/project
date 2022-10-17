@@ -1,10 +1,18 @@
 const fs = require('fs');
 const jsonServer = require('json-server');
-const jwt = require('jsonwebtoken');
+const cors = require('cors');
 const path = require('path');
 
 const server = jsonServer.create();
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
+
+const corsOptions = {
+  origin: '*',
+};
+
+server.use(cors(corsOptions));
+server.use(jsonServer.defaults({}));
+server.use(jsonServer.bodyParser);
 
 // Задержка для имитации реального апи
 server.use(async (req, res, next) => {
@@ -13,17 +21,6 @@ server.use(async (req, res, next) => {
   });
   next();
 });
-
-// eslint-disable-next-line consistent-return
-server.use((req, res, next) => {
-  if (!req.headers.authorization) {
-    return res.status(403).json({ message: 'Auth failed ' });
-  }
-  next();
-});
-
-server.use(jsonServer.defaults());
-server.use(router);
 
 server.post('/login', (req, res) => {
   const { username, password } = req.body;
@@ -38,6 +35,16 @@ server.post('/login', (req, res) => {
 
   return res.status(403).json({ message: 'Auth failed ' });
 });
+
+// eslint-disable-next-line consistent-return
+server.use((req, res, next) => {
+  if (!req.headers.authorization) {
+    return res.status(403).json({ message: 'Auth failed ' });
+  }
+  next();
+});
+
+server.use(router);
 
 server.listen(8000, () => {
   console.log('Server is running. PORT: 8000');

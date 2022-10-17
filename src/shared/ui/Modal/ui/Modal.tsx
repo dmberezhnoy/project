@@ -34,12 +34,7 @@ export const Modal: React.FC<IModalProps> = ({
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true);
-    }
-    return () => {
-      setIsMounted(false);
-    };
+    setIsMounted(isOpen);
   }, [isOpen]);
 
   const handleClose = useCallback(() => {
