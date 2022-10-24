@@ -16,12 +16,12 @@ interface ITextProps {
   theme?: TextTheme;
 }
 
-export const Text: React.FC<ITextProps> = ({
+export const Text = React.memo(({
   className,
   title,
   text,
   theme = TextTheme.PRIMARY,
-}) => {
+}: ITextProps) => {
   const mods = {
     [cls[theme]]: true,
   };
@@ -32,4 +32,4 @@ export const Text: React.FC<ITextProps> = ({
       {text && <p className={cls.text}>{text}</p>}
     </div>
   );
-};
+});

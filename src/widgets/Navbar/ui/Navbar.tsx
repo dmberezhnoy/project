@@ -13,7 +13,7 @@ interface INavbarProps {
     className?: string;
 }
 
-export const Navbar: React.FC<INavbarProps> = ({ className }) => {
+export const Navbar = React.memo(({ className }: INavbarProps) => {
   const { t } = useTranslation();
   const [isOpenLoginForm, setIsOpenLoginForm] = useState(false);
   const authData = useSelector(getUserAuthData);
@@ -50,4 +50,4 @@ export const Navbar: React.FC<INavbarProps> = ({ className }) => {
       <LoginModal isOpen={isOpenLoginForm} onClose={handleCloseLoginForm} />
     </div>
   );
-};
+});

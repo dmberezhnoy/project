@@ -5,7 +5,16 @@
   "comments": [
     { "id": 1, "body": "some comment", "postId": 1 }
   ],
-  "profile": { "name": "typicode" },
+  "profile": {
+    "firstName": "Дима",
+    "lastName": "Бережной",
+    "age": 23,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Samara",
+    "username": "admin",
+    "avatar": "https://uprostim.com/wp-content/uploads/2021/03/image086-77.jpg"
+  },
   "users": [
     {
       "id": 1,

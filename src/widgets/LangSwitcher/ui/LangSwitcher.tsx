@@ -8,7 +8,7 @@ interface ILangSwitcherProps {
     className?: string;
 }
 
-export const LangSwitcher: React.FC<ILangSwitcherProps> = ({ className }) => {
+export const LangSwitcher = React.memo(({ className }: ILangSwitcherProps) => {
   const { t, i18n } = useTranslation();
 
   const handleToggleLanguage = async () => {
@@ -20,4 +20,4 @@ export const LangSwitcher: React.FC<ILangSwitcherProps> = ({ className }) => {
       <Button onClick={handleToggleLanguage} theme={ButtonTheme.OUTLINE}>{t('Язык')}</Button>
     </div>
   );
-};
+});
