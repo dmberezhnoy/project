@@ -4,6 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { DeepPartial } from '@reduxjs/toolkit';
 import { render } from '@testing-library/react';
+
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 import i18nForTests from 'shared/config/i18n/i18nForTests';
 

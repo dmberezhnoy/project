@@ -5,7 +5,7 @@
 
 import path from 'path';
 
-const esModules = ['lodash-es', 'axios'].join('|');
+const esModules = ['axios'].join('|');
 
 export default {
   // All imported modules in your tests should be mocked automatically

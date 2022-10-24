@@ -59,7 +59,7 @@ module.exports = {
           ['^react'],
           ['^@?\\w'],
           [
-            '^(api|components|consts|containers|hooks|icons|images|pages|types|utils|slices|ui-kit|hoc)(/.*|$)',
+            '^(app|entities|features|pages|shared|widgets)(/.*|$)',
           ],
           ['^\\u0000'],
         ],

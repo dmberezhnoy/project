@@ -1,2 +1,2 @@
 import '@testing-library/jest-dom';
-import 'regenerator-runtime';
+import 'regenerator-runtime/runtime';
