@@ -48,6 +48,7 @@ export default {
   },
   globals: {
     __IS_DEV__: true,
+    __API__: '',
   },
   transformIgnorePatterns: [`node_modules/(?!(${esModules}))`],
 

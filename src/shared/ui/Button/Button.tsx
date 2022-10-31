@@ -29,7 +29,7 @@ export const Button = React.memo((props: IButtonProps) => {
   const {
     className,
     children,
-    theme,
+    theme = ButtonTheme.OUTLINE,
     square,
     size = ButtonSize.M,
     ...restProps

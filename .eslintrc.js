@@ -45,6 +45,7 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
+    'no-undef': 'off',
     'i18next/no-literal-string': [
       'error',
       {
@@ -68,6 +69,7 @@ module.exports = {
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true,
   },
   overrides: [
     {
