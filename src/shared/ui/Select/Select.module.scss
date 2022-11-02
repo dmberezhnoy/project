@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.select {
+  background: none;
+  outline: none;
+  color: var(--primary-color);
+  padding: 4px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+}
+
+.option {
+  color: var(--inverted-primary-color);
+  background: var(--inverted-bg-color);
+}

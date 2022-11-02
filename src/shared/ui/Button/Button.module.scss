@@ -22,6 +22,12 @@
   background: none;
 }
 
+.outlineAttention {
+  border: 1px solid var(--attention-light);
+  color: var(--attention-dark);
+  background: none;
+}
+
 .filled {
   background-color: var(--bg-color);
   color: var(--primary-color);

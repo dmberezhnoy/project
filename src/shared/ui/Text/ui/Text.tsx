@@ -9,11 +9,18 @@ export enum TextTheme {
   ERROR = 'error'
 }
 
+export enum TextAlign {
+  CENTER = 'center',
+  RIGHT = 'right',
+  LEFT = 'left',
+}
+
 interface ITextProps {
   className?: string;
   title?: string;
   text?: string;
   theme?: TextTheme;
+  align?: TextAlign;
 }
 
 export const Text = React.memo(({
@@ -21,13 +28,12 @@ export const Text = React.memo(({
   title,
   text,
   theme = TextTheme.PRIMARY,
+  align = TextAlign.LEFT,
 }: ITextProps) => {
-  const mods = {
-    [cls[theme]]: true,
-  };
+  const additionalClassNames = [className, cls[theme], cls[align]];
 
   return (
-    <div className={classNames('', mods, [className])}>
+    <div className={classNames('', {}, additionalClassNames)}>
       {title && <p className={cls.title}>{title}</p>}
       {text && <p className={cls.text}>{text}</p>}
     </div>

@@ -49,6 +49,19 @@ OutlineBtnLight.args = {
   theme: ButtonTheme.OUTLINE,
 };
 
+export const OutlineAttentionBtnLight = Template.bind({});
+OutlineAttentionBtnLight.args = {
+  children: 'Button',
+  theme: ButtonTheme.OUTLINE_ATTENTION,
+};
+
+export const OutlineAttentionBtnDark = Template.bind({});
+OutlineAttentionBtnDark.args = {
+  children: 'Button',
+  theme: ButtonTheme.OUTLINE_ATTENTION,
+};
+OutlineAttentionBtnDark.decorators = [ThemeDecorator(Theme.DARK)];
+
 export const OutlineBtnDark = Template.bind({});
 OutlineBtnDark.args = {
   children: 'Button',

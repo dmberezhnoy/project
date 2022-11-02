@@ -1,16 +1,24 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
   ],
   "profile": {
     "firstName": "Дима",
     "lastName": "Бережной",
     "age": 23,
-    "currency": "RUB",
-    "country": "Russia",
+    "currency": "EUR",
+    "country": "America",
     "city": "Samara",
     "username": "admin",
     "avatar": "https://uprostim.com/wp-content/uploads/2021/03/image086-77.jpg"

@@ -6,12 +6,13 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
 interface IInputProps extends HTMLInputProps{
     className?: string;
-    value?: string;
+    value?: string | number;
     onChange?: (value: string) => void;
+    readonly?: boolean;
 }
 
 export const Input = React.memo((props: IInputProps) => {
@@ -22,6 +23,7 @@ export const Input = React.memo((props: IInputProps) => {
     onChange,
     type = 'text',
     placeholder,
+    readonly,
     ...restProps
   } = props;
   const [isFocus, setIsFocus] = useState(false);
@@ -36,16 +38,25 @@ export const Input = React.memo((props: IInputProps) => {
   }, [autoFocus]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    onChange?.(value);
-    setCaretPosition(value.length);
+    let { value: targetValue } = e.target;
+    if (typeof value === 'number') {
+      targetValue = targetValue.replace(/\D/gm, '');
+    }
+    onChange?.(targetValue);
+    setCaretPosition(targetValue.length);
   };
   const handleFocus = () => setIsFocus(true);
   const handleBlur = () => setIsFocus(false);
   const handleSelect = (e: any) => setCaretPosition(e?.target?.selectionStart || 0);
 
+  const isVisibleCaret = isFocus && !readonly;
+
+  const mods = {
+    [cls.readonly]: readonly,
+  };
+
   return (
-    <div className={classNames(cls.InputWrapper, {}, [className])}>
+    <div className={classNames(cls.InputWrapper, mods, [className])}>
       {placeholder && <div className={cls.placeholder}>{`${placeholder}>`}</div>}
       <div className={cls.caretWrapper}>
         <input
@@ -53,13 +64,14 @@ export const Input = React.memo((props: IInputProps) => {
           className={cls.Input}
           type={type}
           value={value}
+          readOnly={readonly}
           onChange={handleChange}
           onBlur={handleBlur}
           onFocus={handleFocus}
           onSelect={handleSelect}
           {...restProps}
         />
-        {isFocus && (<span className={cls.caret} style={{ left: `${caretPosition * 9}px` }} />)}
+        {isVisibleCaret && (<span className={cls.caret} style={{ left: `${caretPosition * 9}px` }} />)}
       </div>
     </div>
   );
