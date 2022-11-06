@@ -8,6 +8,7 @@ export enum ButtonTheme {
     CLEAR = 'clear',
     OUTLINE = 'outline',
     OUTLINE_ATTENTION = 'outlineAttention',
+    OUTLINE_INVERTED = 'outlineInverted',
     FILLED = 'filled',
     CLEAR_INVERTED = 'clearInverted',
     FILLED_INVERTED = 'filledInverted',

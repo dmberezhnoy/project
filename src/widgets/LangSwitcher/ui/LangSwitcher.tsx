@@ -17,7 +17,7 @@ export const LangSwitcher = React.memo(({ className }: ILangSwitcherProps) => {
 
   return (
     <div className={classNames('', {}, [className])}>
-      <Button onClick={handleToggleLanguage} theme={ButtonTheme.OUTLINE}>{t('Язык')}</Button>
+      <Button onClick={handleToggleLanguage} theme={ButtonTheme.OUTLINE_INVERTED}>{t('Язык')}</Button>
     </div>
   );
 });

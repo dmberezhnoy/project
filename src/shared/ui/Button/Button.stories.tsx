@@ -49,6 +49,19 @@ OutlineBtnLight.args = {
   theme: ButtonTheme.OUTLINE,
 };
 
+export const OutlineInvertedBtnLight = Template.bind({});
+OutlineInvertedBtnLight.args = {
+  children: 'Button',
+  theme: ButtonTheme.OUTLINE_INVERTED,
+};
+
+export const OutlineInvertedBtnDark = Template.bind({});
+OutlineInvertedBtnDark.args = {
+  children: 'Button',
+  theme: ButtonTheme.OUTLINE_INVERTED,
+};
+OutlineInvertedBtnDark.decorators = [ThemeDecorator(Theme.DARK)];
+
 export const OutlineAttentionBtnLight = Template.bind({});
 OutlineAttentionBtnLight.args = {
   children: 'Button',
