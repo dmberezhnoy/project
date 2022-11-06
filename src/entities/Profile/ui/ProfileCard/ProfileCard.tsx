@@ -13,20 +13,24 @@ import { TextAlign, TextTheme } from 'shared/ui/Text/ui/Text';
 import { IProfile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
 
+export interface IChangeController {
+    firstName?: (value: string) => void;
+    lastName?: (value: string) => void;
+    age?: (value: string) => void;
+    city?: (value: string) => void;
+    username?: (value: string) => void;
+    avatar?: (value: string) => void;
+    currency?: (value: Currency) => void;
+    country?: (value: Country) => void;
+}
+
 interface IProfileCardProps {
     className?: string;
     profile?: IProfile;
     isLoading?: boolean;
     readonly?: boolean;
     error?: string;
-    onChangeFirstName?: (value: string) => void;
-    onChangeLastName?: (value: string) => void;
-    onChangeAge?: (value: string) => void;
-    onChangeCity?: (value: string) => void;
-    onChangeUsername?: (value: string) => void;
-    onChangeAvatar?: (value: string) => void;
-    onChangeCurrency?: (value: Currency) => void;
-    onChangeCountry?: (value: Country) => void;
+    onChangeController?: IChangeController;
 }
 
 export const ProfileCard = React.memo((props: IProfileCardProps) => {
@@ -36,14 +40,7 @@ export const ProfileCard = React.memo((props: IProfileCardProps) => {
     isLoading,
     readonly,
     error,
-    onChangeFirstName,
-    onChangeLastName,
-    onChangeAge,
-    onChangeCity,
-    onChangeUsername,
-    onChangeAvatar,
-    onChangeCurrency,
-    onChangeCountry,
+    onChangeController,
   } = props;
 
   const { t } = useTranslation('profile');
@@ -79,47 +76,47 @@ export const ProfileCard = React.memo((props: IProfileCardProps) => {
       <Input
         value={profile?.firstName}
         placeholder={t('Ваше имя')}
-        onChange={onChangeFirstName}
+        onChange={onChangeController?.firstName}
         readonly={readonly}
       />
       <Input
         value={profile?.lastName}
         placeholder={t('Ваша фамилия')}
-        onChange={onChangeLastName}
+        onChange={onChangeController?.lastName}
         readonly={readonly}
       />
       <Input
         value={profile?.age}
         placeholder={t('Ваш возраст')}
-        onChange={onChangeAge}
+        onChange={onChangeController?.age}
         readonly={readonly}
       />
       <Input
         value={profile?.city}
         placeholder={t('Город')}
-        onChange={onChangeCity}
+        onChange={onChangeController?.city}
         readonly={readonly}
       />
       <Input
         value={profile?.username}
         placeholder={t('Имя пользователя')}
-        onChange={onChangeUsername}
+        onChange={onChangeController?.username}
         readonly={readonly}
       />
       <Input
         value={profile?.avatar}
         placeholder={t('Укажите ссылку на аватар')}
-        onChange={onChangeAvatar}
+        onChange={onChangeController?.avatar}
         readonly={readonly}
       />
       <CurrencySelect
         value={profile?.currency}
-        onChange={onChangeCurrency}
+        onChange={onChangeController?.currency}
         readonly={readonly}
       />
       <CountrySelect
         value={profile?.country}
-        onChange={onChangeCountry}
+        onChange={onChangeController?.country}
         readonly={readonly}
       />
     </div>

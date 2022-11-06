@@ -2,13 +2,15 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
+import avatar from 'shared/assets/tests/avatar.jpg';
+
 import { Avatar } from './Avatar';
 
 export default {
   title: 'shared/Avatar',
   component: Avatar,
   args: {
-    src: 'https://roninyurka.ru/wp-content/uploads/2021/09/chto-takoe-javascript.jpg',
+    src: avatar,
   },
 } as ComponentMeta<typeof Avatar>;
 
