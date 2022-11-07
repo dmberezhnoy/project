@@ -24,13 +24,11 @@ import { TextTheme } from 'shared/ui/Text/ui/Text';
 
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
-interface IProfilePageProps {
-}
 const reducers: ReducerList = {
   profile: profileReducer,
 };
 
-const ProfilePage: React.FC<IProfilePageProps> = () => {
+const ProfilePage = () => {
   const { t } = useTranslation('profile');
   const dispatch = useAppDispatch();
 
