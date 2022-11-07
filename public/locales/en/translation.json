@@ -9,6 +9,7 @@
   "Вернуться на главную": "Back to main page",
   "Основная страница": "Main page",
   "О сайте": "About",
+  "Профиль": "Profile",
   "Увеличить": "Increment",
   "Уменьшить": "Decrement",
   "Войти": "Sign in",
@@ -18,7 +19,7 @@
   "Форма авторизации": "Authorization form",
   "Вы ввели неверный логин или пароль": "You have entered an incorrect username or password",
   "Страница профиля": "Profile page",
-  "Аватарка": "Аватарка",
-  "Укажите валюту": "Укажите валюту",
-  "Укажите страну": "Укажите страну"
+  "Аватарка": "Avatar",
+  "Укажите валюту": "Input the currency",
+  "Укажите страну": "Input the country"
 }
