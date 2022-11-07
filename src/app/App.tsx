@@ -1,15 +1,16 @@
 import { Suspense, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { AppRouter } from 'app/providers/router';
 import { useTheme } from 'app/providers/ThemeProvider';
-import { userActions } from 'entities/User';
+import { getUserInitialized, userActions } from 'entities/User';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 
 const App = () => {
   const { theme } = useTheme();
+  const isInitializedUser = useSelector(getUserInitialized);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,7 +23,7 @@ const App = () => {
         <Navbar />
         <div className="content-page">
           <Sidebar />
-          <AppRouter />
+          {isInitializedUser && <AppRouter />}
         </div>
       </Suspense>
     </div>

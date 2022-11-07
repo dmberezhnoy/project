@@ -1,25 +1,30 @@
-import React, { Suspense } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { Suspense, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { routeConfig } from 'shared/config/routerConfig';
+import { IAppRouteProps, routeConfig } from 'shared/config/routerConfig';
 import { PageLoader } from 'widgets/PageLoader';
 
+import { RequireAuth } from './RequireAuth';
+
 const AppRouter = () => {
-  const { t } = useTranslation();
+  const renderWithWrapper = useCallback((route: IAppRouteProps) => {
+    const element = (
+      <Suspense fallback={<PageLoader />}>
+        <div className="page-wrapper">{route.element}</div>
+      </Suspense>
+    );
+    return (
+      <Route
+        key={route.path}
+        path={route.path}
+        element={route.authOnly ? <RequireAuth>{element}</RequireAuth> : element}
+      />
+    );
+  }, []);
+
   return (
     <Routes>
-      {Object.values(routeConfig).map(({ element, path }) => (
-        <Route
-          key={path}
-          element={(
-            <Suspense fallback={<PageLoader />}>
-              <div className="page-wrapper">{element}</div>
-            </Suspense>
-          )}
-          path={path}
-        />
-      ))}
+      {Object.values(routeConfig).map(renderWithWrapper)}
     </Routes>
 
   );
