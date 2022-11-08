@@ -5,7 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
-import { Text, TextTheme } from './Text';
+import { Text, TextSize, TextTheme } from './Text';
 
 export default {
   title: 'shared/Text',
@@ -64,3 +64,48 @@ OnlyTextDark.args = {
   text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, repellat.',
 };
 OnlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const TextLightSizeS = Template.bind({});
+TextLightSizeS.args = {
+  size: TextSize.S,
+  title: 'Title text',
+  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, repellat.',
+};
+
+export const TexDarkSizeS = Template.bind({});
+TexDarkSizeS.args = {
+  size: TextSize.S,
+  title: 'Title text',
+  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, repellat.',
+};
+TexDarkSizeS.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const TextLightSizeM = Template.bind({});
+TextLightSizeM.args = {
+  size: TextSize.M,
+  title: 'Title text',
+  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, repellat.',
+};
+
+export const TexDarkSizeM = Template.bind({});
+TexDarkSizeM.args = {
+  size: TextSize.M,
+  title: 'Title text',
+  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, repellat.',
+};
+TexDarkSizeM.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const TextLightSizeL = Template.bind({});
+TextLightSizeL.args = {
+  size: TextSize.L,
+  title: 'Title text',
+  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, repellat.',
+};
+
+export const TexDarkSizeL = Template.bind({});
+TexDarkSizeL.args = {
+  size: TextSize.L,
+  title: 'Title text',
+  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, repellat.',
+};
+TexDarkSizeL.decorators = [ThemeDecorator(Theme.DARK)];

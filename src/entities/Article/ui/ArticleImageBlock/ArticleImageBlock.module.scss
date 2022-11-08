@@ -1,0 +1,10 @@
+.ArticleImageBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  img {
+    max-width: 50%;
+  }
+}
