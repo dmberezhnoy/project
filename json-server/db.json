@@ -74,19 +74,22 @@
       "id": "1",
       "text": "some comment",
       "articleId": "1",
-      "userId": "1"
+      "userId": "1",
+      "createdDate": "06.11.2022"
     },
     {
       "id": "2",
       "text": "some comment2",
       "articleId": "1",
-      "userId": "1"
+      "userId": "1",
+      "createdDate": "06.11.2022"
     },
     {
       "id": "3",
       "text": "some comment3",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2",
+      "createdDate": "08.11.2022"
     }
   ],
   "profile": {
@@ -104,13 +107,15 @@
       "id": 1,
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://uprostim.com/wp-content/uploads/2021/03/image086-77.jpg"
     },
     {
       "id": 2,
       "username": "user",
       "password": "111",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://coolsen.ru/wp-content/uploads/2021/06/17-7.jpg"
     }
   ]
 }
