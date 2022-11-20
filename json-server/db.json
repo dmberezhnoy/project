@@ -9,6 +9,7 @@
   "articles": [
     {
       "id": "1",
+      "userId": "1",
       "title": "JavaScript news",
       "subtitle": "Что нового появилось в JS за 2022г?",
       "img": "https://cs11.pikabu.ru/post_img/2020/02/29/11/og_og_1583005972263333358.jpg",

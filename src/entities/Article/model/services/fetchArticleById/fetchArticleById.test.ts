@@ -13,6 +13,7 @@ const mockData: IArticle = {
   type: [ArticleTypes.ECONOMICS, ArticleTypes.IT],
   createdAt: '08.11.2022',
   views: 423,
+  user: { id: '1', username: 'test' },
 };
 
 describe('fetchArticleById.test', () => {

@@ -1,0 +1,103 @@
+.ArticleListItem {
+  .views {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+}
+
+.LIST {
+  .header {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .createdAt {
+    margin-left: auto;
+  }
+
+  .image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    margin: 8px 0;
+  }
+
+  .textBlock {
+    max-height: 200px;
+    overflow-y: hidden;
+    margin-bottom: 16px;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .views {
+    margin-left: auto;
+  }
+}
+
+.PLATE {
+  width: 260px;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+
+  .imageWrapper {
+    width: 230px;
+    height: 230px;
+    position: relative;
+  }
+
+  .image {
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+  }
+
+  .date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--bg-color);
+    opacity: 0.7;
+    border-radius: 4px;
+    padding: 4px;
+    display: none;
+  }
+
+  &:hover {
+    transform: scale(1.01);
+
+    .date {
+      display: block;
+    }
+  }
+
+  .infoWrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .views {
+    margin-left: auto;
+    margin-right: 8px;
+  }
+
+  .types p {
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .title p {
+    width: 230px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

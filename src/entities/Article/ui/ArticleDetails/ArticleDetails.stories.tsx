@@ -8,7 +8,7 @@ import { ArticleBlockTypes, ArticleTypes } from '../../model/types';
 import { ArticleDetails } from './ArticleDetails';
 
 export default {
-  title: 'entities/ArticleDetails',
+  title: 'entities/Article/ArticleDetails',
   component: ArticleDetails,
   argTypes: {},
 } as ComponentMeta<typeof ArticleDetails>;
