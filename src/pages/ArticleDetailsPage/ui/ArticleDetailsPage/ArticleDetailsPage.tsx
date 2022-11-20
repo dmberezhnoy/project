@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { ArticleDetails } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
+import { AddCommentForm } from 'features/AddCommentForm';
 import {
+  addCommentForArticle,
   articleDetailsCommentsReducer,
   getArticleComments,
   getArticleDetailsCommentsIsLoading,
@@ -34,6 +36,10 @@ const ArticleDetailsPage = () => {
     dispatch(fetchCommentsByArticleId(id));
   });
 
+  const handleSendComment = useCallback((comment: string) => {
+    dispatch(addCommentForArticle(comment));
+  }, [dispatch]);
+
   if (!id) {
     return (
       <div
@@ -51,6 +57,7 @@ const ArticleDetailsPage = () => {
       >
         <ArticleDetails id={id} />
         <Text title={t('Комментарии')} className={cls.commentsTitle} />
+        <AddCommentForm className={cls.commentForm} onSendComment={handleSendComment} />
         <CommentList comments={comments} isLoading={commentsIsLoading} />
       </div>
     </DynamicModuleLoader>

@@ -14,6 +14,7 @@ import { IArticleDetailsSchema } from 'entities/Article';
 import { ICounterSchema } from 'entities/Counter';
 import { IProfileSchema } from 'entities/Profile';
 import { IUserSchema } from 'entities/User';
+import { IAddCommentFormSchema } from 'features/AddCommentForm';
 import { IArticleDetailsCommentsSchema } from 'features/ArticleDetailsComments';
 import { ILoginSchema } from 'features/AuthByUsername';
 
@@ -26,6 +27,7 @@ export interface StateSchema {
     profile?: IProfileSchema;
     articleDetails?: IArticleDetailsSchema;
     articleDetailsComments?: IArticleDetailsCommentsSchema;
+    addCommentForm?: IAddCommentFormSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

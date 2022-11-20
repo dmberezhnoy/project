@@ -1,6 +1,7 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
@@ -18,7 +19,7 @@ import {
 import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks';
+import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
 
@@ -31,6 +32,7 @@ const reducers: ReducerList = {
 const ProfilePage = () => {
   const { t } = useTranslation('profile');
   const dispatch = useAppDispatch();
+  const { id } = useParams();
 
   const profileData = useSelector(getProfileFormData);
   const isLoading = useSelector(getProfileIsLoading);
@@ -46,11 +48,12 @@ const ProfilePage = () => {
     [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
   };
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    console.log(id, 'id');
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   const handleController = useMemo(() => ({
     firstName: (value: string) => dispatch(profileActions.updateProfile({ firstName: value })),

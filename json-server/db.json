@@ -14,7 +14,9 @@
       "img": "https://cs11.pikabu.ru/post_img/2020/02/29/11/og_og_1583005972263333358.jpg",
       "views": 1537,
       "createdAt": "24.11.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -90,30 +92,78 @@
       "articleId": "1",
       "userId": "2",
       "createdDate": "08.11.2022"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "fffs",
+      "id": "0OaRhnc"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "4242",
+      "createdDate": "Thu Nov 10 2022",
+      "id": "hK_qc3W"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "test",
+      "createdDate": "20.11.2022",
+      "id": "w7Dzoev"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "tttt",
+      "createdDate": "20.11.2022",
+      "id": "zWIX1Qo"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "yy",
+      "createdDate": "20.11.2022",
+      "id": "3wK4Ith"
     }
   ],
-  "profile": {
-    "firstName": "Дима",
-    "lastName": "Бережной",
-    "age": 23,
-    "currency": "EUR",
-    "country": "America",
-    "city": "Samara",
-    "username": "admin",
-    "avatar": "https://uprostim.com/wp-content/uploads/2021/03/image086-77.jpg"
-  },
+  "profile": [
+    {
+      "id": "1",
+      "firstName": "Дима1",
+      "lastName": "Бережной",
+      "age": 23,
+      "currency": "EUR",
+      "country": "America",
+      "city": "Samara",
+      "username": "admin",
+      "avatar": "https://uprostim.com/wp-content/uploads/2021/03/image086-77.jpg"
+    },
+    {
+      "id": "2",
+      "firstName": "Тест",
+      "lastName": "Тестович",
+      "age": 253,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Samara",
+      "username": "usertest",
+      "avatar": "https://coolsen.ru/wp-content/uploads/2021/06/17-7.jpg"
+    }
+  ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
       "avatar": "https://uprostim.com/wp-content/uploads/2021/03/image086-77.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "user",
-      "password": "111",
+      "password": "123",
       "role": "USER",
       "avatar": "https://coolsen.ru/wp-content/uploads/2021/06/17-7.jpg"
     }

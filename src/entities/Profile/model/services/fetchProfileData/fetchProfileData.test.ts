@@ -12,13 +12,14 @@ const mockData = {
   currency: Currency.RUB,
   age: 23,
   city: 'Samara',
+  id: '1',
 };
 
 describe('fetchProfileData.test', () => {
   test('success', async () => {
     const thunk = new TestAsyncThunk(fetchProfileData);
     thunk.api.get.mockReturnValue(Promise.resolve({ data: mockData }));
-    const result = await thunk.callThunk();
+    const result = await thunk.callThunk('1');
 
     expect(thunk.api.get).toHaveBeenCalled();
     expect(thunk.api.post).toHaveBeenCalledTimes(0);
@@ -29,7 +30,7 @@ describe('fetchProfileData.test', () => {
   test('error', async () => {
     const thunk = new TestAsyncThunk(fetchProfileData);
     thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
-    const result = await thunk.callThunk();
+    const result = await thunk.callThunk('1');
 
     expect(thunk.api.get).toHaveBeenCalled();
     expect(thunk.api.post).toHaveBeenCalledTimes(0);
