@@ -18,8 +18,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Page } from 'shared/ui/Page';
 import { Text } from 'shared/ui/Text';
+import { Page } from 'widgets/Page';
 
 import cls from './ArticleDetailsPage.module.scss';
 

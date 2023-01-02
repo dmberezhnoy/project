@@ -14,11 +14,13 @@ import { IUserSchema } from 'entities/User';
 import { IAddCommentFormSchema } from 'features/AddCommentForm';
 import { IArticleDetailsCommentsSchema } from 'features/ArticleDetailsComments';
 import { ILoginSchema } from 'features/AuthByUsername';
+import { UISchema } from 'features/UI';
 import { IArticlesPageSchema } from 'pages/ArticlesPage';
 
 export interface StateSchema {
     counter: ICounterSchema;
     user: IUserSchema;
+    ui: UISchema;
 
     // Async reducers
     loginForm?: ILoginSchema;

@@ -6,7 +6,7 @@ import { ArticleList, ArticleView, ArticleViewSelector } from 'entities/Article'
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
-import { Page } from 'shared/ui/Page';
+import { Page } from 'widgets/Page';
 
 import {
   getArticlesPageError,

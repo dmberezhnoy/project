@@ -20,9 +20,9 @@ import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
-import { Page } from 'shared/ui/Page';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
+import { Page } from 'widgets/Page';
 
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
