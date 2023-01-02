@@ -20,6 +20,7 @@ import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
+import { Page } from 'shared/ui/Page';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
 
@@ -49,7 +50,6 @@ const ProfilePage = () => {
   };
 
   useInitialEffect(() => {
-    console.log(id, 'id');
     if (id) {
       dispatch(fetchProfileData(id));
     }
@@ -68,7 +68,7 @@ const ProfilePage = () => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames('', {}, [])}>
+      <Page className={classNames('', {}, [])}>
         <ProfilePageHeader />
         {!!validateErrors?.length && validateErrors.map((err) => (
           <Text
@@ -84,7 +84,7 @@ const ProfilePage = () => {
           error={error}
           onChangeController={handleController}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

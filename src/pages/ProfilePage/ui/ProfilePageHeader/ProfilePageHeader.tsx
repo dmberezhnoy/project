@@ -25,9 +25,6 @@ export const ProfilePageHeader: React.FC<IProfilePageHeaderProps> = ({ className
   const profileData = useSelector(getProfileData);
 
   const isEditPermission = authData?.id === profileData?.id;
-  console.log(isEditPermission, 'isEditPermission');
-  console.log(authData?.id, 'authData?.id ');
-  console.log(profileData?.id, 'profileData?.id ');
 
   const handleEditProfile = useCallback(() => {
     dispatch(profileActions.setReadonly(false));

@@ -18,6 +18,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Page } from 'shared/ui/Page';
 import { Text } from 'shared/ui/Text';
 
 import cls from './ArticleDetailsPage.module.scss';
@@ -48,17 +49,17 @@ const ArticleDetailsPage = () => {
 
   if (!id) {
     return (
-      <div
+      <Page
         className={classNames(cls.ArticleDetailsPage, {}, [])}
       >
         {t('Статья не найдена')}
-      </div>
+      </Page>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div
+      <Page
         className={classNames(cls.ArticleDetailsPage, {}, [])}
       >
         <Button theme={ButtonTheme.OUTLINE} onClick={handleBackToList}>{t('Назад к списку')}</Button>
@@ -66,7 +67,7 @@ const ArticleDetailsPage = () => {
         <Text title={t('Комментарии')} className={cls.commentsTitle} />
         <AddCommentForm className={cls.commentForm} onSendComment={handleSendComment} />
         <CommentList comments={comments} isLoading={commentsIsLoading} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

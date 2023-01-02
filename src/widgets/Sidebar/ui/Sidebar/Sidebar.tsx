@@ -23,7 +23,7 @@ export const Sidebar = React.memo(({ className }: ISidebarProps) => {
   };
 
   return (
-    <div data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.collapsed]: isCollapsed }, [className])}>
+    <menu data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.collapsed]: isCollapsed }, [className])}>
       <Button
         square
         data-testid="sidebar-toggle"
@@ -43,6 +43,6 @@ export const Sidebar = React.memo(({ className }: ISidebarProps) => {
         <ThemeSwitcher />
         <LangSwitcher />
       </div>
-    </div>
+    </menu>
   );
 });

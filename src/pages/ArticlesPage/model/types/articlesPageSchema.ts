@@ -6,5 +6,8 @@ export interface IArticlesPageSchema extends EntityState<IArticle> {
     isLoading?: boolean;
     error?: string;
 
-    view: ArticleView
+    view: ArticleView;
+    page: number;
+    pageSize?: number;
+    hasMore: boolean;
 }
