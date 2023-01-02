@@ -12,7 +12,7 @@ interface ICardProps extends HTMLAttributes<HTMLDivElement>{
 export const Card = React.memo((props: ICardProps) => {
   const { className, children } = props;
   return (
-    <div className={classNames(cls.Card, {}, [className])} {...props}>
+    <div className={classNames(cls.Card, {}, [className])}>
       {children}
     </div>
   );

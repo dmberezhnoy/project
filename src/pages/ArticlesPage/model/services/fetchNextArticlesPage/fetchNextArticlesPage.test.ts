@@ -15,12 +15,13 @@ describe('fetchNextArticlesPage.test', () => {
         pageSize: 3,
         isLoading: false,
         hasMore: true,
+        _initialized: true,
       },
     });
     await thunk.callThunk();
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(4);
-    expect(fetchArticles).toHaveBeenCalledWith({ page: 2 });
+    expect(fetchArticles).toHaveBeenCalled();
   });
 
   test('fetch not called (hasMore - false)', async () => {

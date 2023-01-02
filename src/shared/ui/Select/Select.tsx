@@ -4,21 +4,21 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 import cls from './Select.module.scss';
 
-export interface ISelectOption {
-    value: string;
+export interface ISelectOption<T extends string> {
+    value: T;
     content: string;
 }
 
-interface ISelectProps {
+interface ISelectProps<T extends string> {
     className?: string;
     label?: string;
     readonly?: boolean;
-    options?: ISelectOption[];
-    onChange?: (value: string) => void;
-    value?: string;
+    options?: ISelectOption<T>[];
+    onChange?: (value: T) => void;
+    value?: T;
 }
 
-export const Select = React.memo((props: ISelectProps) => {
+export const Select = <T extends string>(props: ISelectProps<T>) => {
   const {
     className,
     label,
@@ -28,7 +28,7 @@ export const Select = React.memo((props: ISelectProps) => {
     value,
   } = props;
   const handleChangeValue = useCallback((e: ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(e.target.value);
+    onChange?.(e.target.value as T);
   }, [onChange]);
 
   const optionList = useMemo(
@@ -59,4 +59,4 @@ export const Select = React.memo((props: ISelectProps) => {
       </select>
     </div>
   );
-});
+};
