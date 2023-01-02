@@ -1,10 +1,15 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import {
-  ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSelector,
+  ArticleSortField,
+  ArticleSortSelector,
+  ArticleTypeSelector,
+  ArticleView,
+  ArticleViewSelector,
 } from 'entities/Article';
+import { ArticleTypes } from 'entities/Article/model/types';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch, useDebounce } from 'shared/lib/hooks';
 import { SortOrder } from 'shared/types';
@@ -15,6 +20,7 @@ import {
   getArticlesPageOrder,
   getArticlesPageSearch,
   getArticlesPageSort,
+  getArticlesPageType,
   getArticlesPageView,
 } from '../../model/selectors';
 import { fetchArticles } from '../../model/services';
@@ -32,6 +38,7 @@ export const ArticlesPageFilters = React.memo((props: IArticlesPageFiltersProps)
   const order = useSelector(getArticlesPageOrder);
   const sort = useSelector(getArticlesPageSort);
   const search = useSelector(getArticlesPageSearch);
+  const articlesType = useSelector(getArticlesPageType);
 
   const { t } = useTranslation();
 
@@ -63,6 +70,12 @@ export const ArticlesPageFilters = React.memo((props: IArticlesPageFiltersProps)
     debouncedFetchArticlesData();
   }, [dispatch, debouncedFetchArticlesData]);
 
+  const handleChangeType = useCallback((type: ArticleTypes) => {
+    dispatch(articlePageActions.setType(type));
+    dispatch(articlePageActions.setPage(1));
+    fetchArticlesData();
+  }, [dispatch, fetchArticlesData]);
+
   return (
     <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
       <div className={cls.sortWrapper}>
@@ -74,9 +87,10 @@ export const ArticlesPageFilters = React.memo((props: IArticlesPageFiltersProps)
         />
         <ArticleViewSelector view={view} onChangeView={handleChangeView} />
       </div>
-      <Card className={cls.search}>
+      <Card>
         <Input placeholder={t('Поиск')} value={search} onChange={handleChangeSearch} />
       </Card>
+      <ArticleTypeSelector value={articlesType} onChangeArticleType={handleChangeType} />
     </div>
   );
 });

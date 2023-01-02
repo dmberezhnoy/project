@@ -8,3 +8,4 @@ export { getArticlesPageInitialized } from './getArticlesPageInitialized';
 export { getArticlesPageSort } from './getArticlesPageSort';
 export { getArticlesPageOrder } from './getArticlesPageOrder';
 export { getArticlesPageSearch } from './getArticlesPageSearch';
+export { getArticlesPageType } from './getArticlesPageType';
