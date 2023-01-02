@@ -80,7 +80,8 @@
       "views": 1537,
       "createdAt": "24.12.2022",
       "type": [
-        "IT", "SCIENCE"
+        "IT",
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -144,7 +145,8 @@
       "views": 1537,
       "createdAt": "05.11.2022",
       "type": [
-        "IT", "POLITIC"
+        "IT",
+        "POLITIC"
       ],
       "blocks": [
         {
@@ -591,7 +593,6 @@
         }
       ]
     }
-
   ],
   "comments": [
     {
@@ -648,6 +649,13 @@
       "text": "yy",
       "createdDate": "20.11.2022",
       "id": "3wK4Ith"
+    },
+    {
+      "articleId": "3",
+      "userId": "2",
+      "text": "53535",
+      "createdDate": "02.01.2023",
+      "id": "LWlEeer"
     }
   ],
   "profile": [

@@ -10,4 +10,6 @@ export interface IArticlesPageSchema extends EntityState<IArticle> {
     page: number;
     pageSize?: number;
     hasMore: boolean;
+
+    _initialized: boolean;
 }

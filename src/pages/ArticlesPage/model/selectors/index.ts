@@ -4,3 +4,4 @@ export { getArticlesPageView } from './getArticlesPageView';
 export { getArticlesPageHasMore } from './getArticlesPageHasMore';
 export { getArticlesPageNum } from './getArticlesPageNum';
 export { getArticlesPageSize } from './getArticlesPageSize';
+export { getArticlesPageInitialized } from './getArticlesPageInitialized';

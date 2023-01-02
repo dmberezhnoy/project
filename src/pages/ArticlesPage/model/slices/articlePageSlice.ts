@@ -25,12 +25,14 @@ export const articlePageSlice = createSlice({
     view: ArticleView.PLATE,
     page: 1,
     hasMore: true,
+    _initialized: false,
   }),
   reducers: {
     initState: (state) => {
       const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView;
       state.view = view;
       state.pageSize = view === ArticleView.LIST ? 4 : 9;
+      state._initialized = true;
     },
     setView: (state, action: PayloadAction<ArticleView>) => {
       state.view = action.payload;

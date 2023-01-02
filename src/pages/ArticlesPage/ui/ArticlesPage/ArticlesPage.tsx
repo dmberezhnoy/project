@@ -13,7 +13,7 @@ import {
   getArticlesPageIsLoading,
   getArticlesPageView,
 } from '../../model/selectors';
-import { fetchArticles, fetchNextArticlesPage } from '../../model/services';
+import { fetchNextArticlesPage, initArticlesPage } from '../../model/services';
 import { articlePageActions, articlePageReducer, getArticles } from '../../model/slices/articlePageSlice';
 import cls from './ArticlesPage.module.scss';
 
@@ -35,10 +35,7 @@ const ArticlesPage = () => {
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(articlePageActions.initState());
-    dispatch(fetchArticles({
-      page: 1,
-    }));
+    dispatch(initArticlesPage());
   });
 
   const handleChangeView = useCallback((view: ArticleView) => {
@@ -46,7 +43,7 @@ const ArticlesPage = () => {
   }, [dispatch]);
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page className={classNames(cls.ArticlesPage, {}, [])} onScrollEnd={handleLoadNextPart}>
         <ArticleViewSelector view={view} onChangeView={handleChangeView} />
         <ArticleList articles={articles} isLoading={isLoading} view={view} />

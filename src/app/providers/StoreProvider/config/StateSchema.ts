@@ -1,5 +1,3 @@
-import { NavigateOptions } from 'react-router';
-
 import {
   AnyAction,
   CombinedState,
@@ -8,7 +6,6 @@ import {
   ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { To } from 'history';
 
 import { IArticleDetailsSchema } from 'entities/Article';
 import { ICounterSchema } from 'entities/Counter';
@@ -47,7 +44,6 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface IThunkExtraArg {
     api: AxiosInstance;
-    navigate?: (to: To, options?: NavigateOptions) => void;
 }
 
 export interface IThunkConfig<T> {
