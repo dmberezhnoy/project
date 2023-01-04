@@ -3,15 +3,18 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails, ArticleList, ArticleView } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { AddCommentForm } from 'features/AddCommentForm';
 import {
   addCommentForArticle,
-  articleDetailsCommentsReducer,
+  articleDetailsPageReducer,
+  fetchArticleRecommendations,
   fetchCommentsByArticleId,
   getArticleComments,
   getArticleDetailsCommentsIsLoading,
+  getArticleRecommendations,
+  getArticleRecommendationsIsLoading,
 } from 'features/ArticleDetailsComments';
 import { RoutePath } from 'shared/config/routerConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -19,12 +22,13 @@ import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicM
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text';
+import { TextSize } from 'shared/ui/Text/ui/Text';
 import { Page } from 'widgets/Page';
 
 import cls from './ArticleDetailsPage.module.scss';
 
 const reducers: ReducerList = {
-  articleDetailsComments: articleDetailsCommentsReducer,
+  articleDetailsPage: articleDetailsPageReducer,
 };
 
 const ArticleDetailsPage = () => {
@@ -34,10 +38,13 @@ const ArticleDetailsPage = () => {
   const navigate = useNavigate();
 
   const comments = useSelector(getArticleComments.selectAll);
+  const recommendations = useSelector(getArticleRecommendations.selectAll);
   const commentsIsLoading = useSelector(getArticleDetailsCommentsIsLoading);
+  const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
+    dispatch(fetchArticleRecommendations());
   });
 
   const handleSendComment = useCallback((comment: string) => {
@@ -64,7 +71,15 @@ const ArticleDetailsPage = () => {
       >
         <Button theme={ButtonTheme.OUTLINE} onClick={handleBackToList}>{t('Назад к списку')}</Button>
         <ArticleDetails id={id} />
-        <Text title={t('Комментарии')} className={cls.commentsTitle} />
+        <Text size={TextSize.L} title={t('Рекомендуем')} className={cls.commentsTitle} />
+        <ArticleList
+          className={cls.recommendations}
+          articles={recommendations}
+          isLoading={recommendationsIsLoading}
+          view={ArticleView.PLATE}
+          target="_blank"
+        />
+        <Text size={TextSize.L} title={t('Комментарии')} className={cls.commentsTitle} />
         <AddCommentForm className={cls.commentForm} onSendComment={handleSendComment} />
         <CommentList comments={comments} isLoading={commentsIsLoading} />
       </Page>

@@ -12,7 +12,7 @@ import { ICounterSchema } from 'entities/Counter';
 import { IProfileSchema } from 'entities/Profile';
 import { IUserSchema } from 'entities/User';
 import { IAddCommentFormSchema } from 'features/AddCommentForm';
-import { IArticleDetailsCommentsSchema } from 'features/ArticleDetailsComments';
+import { IArticleDetailsPageSchema } from 'features/ArticleDetailsComments';
 import { ILoginSchema } from 'features/AuthByUsername';
 import { UISchema } from 'features/UI';
 import { IArticlesPageSchema } from 'pages/ArticlesPage';
@@ -26,9 +26,9 @@ export interface StateSchema {
     loginForm?: ILoginSchema;
     profile?: IProfileSchema;
     articleDetails?: IArticleDetailsSchema;
-    articleDetailsComments?: IArticleDetailsCommentsSchema;
     addCommentForm?: IAddCommentFormSchema;
-    articlesPage?: IArticlesPageSchema
+    articlesPage?: IArticlesPageSchema;
+    articleDetailsPage?: IArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;
