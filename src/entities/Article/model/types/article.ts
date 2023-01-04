@@ -51,6 +51,7 @@ export enum ArticleView {
 export interface IArticle {
     id: string;
     user: IUser;
+    userId?: string;
     title: string;
     subtitle: string;
     img: string;

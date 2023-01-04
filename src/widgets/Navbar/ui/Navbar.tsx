@@ -4,8 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
+import { RoutePath } from 'shared/config/routerConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Text } from 'shared/ui/Text';
+import { TextTheme } from 'shared/ui/Text/ui/Text';
 
 import cls from './Navbar.module.scss';
 
@@ -26,6 +30,14 @@ export const Navbar = React.memo(({ className }: INavbarProps) => {
   if (authData) {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
+        <Text title={t('Учебный проект')} theme={TextTheme.INVERTED} className={cls.appName} />
+        <AppLink
+          to={RoutePath.article_create}
+          theme={AppLinkTheme.PRIMARY}
+          className={cls.createArticle}
+        >
+          {t('Создание статьи')}
+        </AppLink>
         <Button
           onClick={handleLogout}
           theme={ButtonTheme.CLEAR_INVERTED}

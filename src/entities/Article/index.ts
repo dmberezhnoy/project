@@ -10,3 +10,4 @@ export {
   ArticleSortField,
   ArticleTypes,
 } from './model/types';
+export { getArticleDetailsData } from './model/selectors';
