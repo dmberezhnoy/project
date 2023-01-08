@@ -3,9 +3,9 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Theme } from 'app/providers/ThemeProvider';
-import { ArticleView } from 'entities/Article';
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
+import { ArticleView } from '../../model/types';
 import { ArticleListItem } from './ArticleListItem';
 
 const article = {

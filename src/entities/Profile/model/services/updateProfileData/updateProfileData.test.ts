@@ -1,8 +1,8 @@
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk';
 
+import { ValidateProfileError } from '../../types/profile';
 import { updateProfileData } from '../updateProfileData';
 
 const mockData = {

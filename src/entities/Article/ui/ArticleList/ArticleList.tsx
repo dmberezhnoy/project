@@ -1,13 +1,13 @@
 import React, { HTMLAttributeAnchorTarget } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text';
 import { TextSize } from 'shared/ui/Text/ui/Text';
 
 import { ArticleView, IArticle } from '../../model/types';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import cls from './ArticleList.module.scss';
 
 interface IArticleListProps {

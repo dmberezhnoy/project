@@ -23,6 +23,7 @@ module.exports = {
     'i18next',
     'simple-import-sort',
     'react-hooks',
+    'lesson-plugin',
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -67,6 +68,7 @@ module.exports = {
         ],
       },
     ],
+    'lesson-plugin/path-checker': 'error',
   },
   globals: {
     __PROJECT__: true,
