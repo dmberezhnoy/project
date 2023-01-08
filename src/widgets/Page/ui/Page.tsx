@@ -49,13 +49,13 @@ export const Page = React.memo((props: IPageProps) => {
   }, 3000);
 
   return (
-    <section
+    <main
       className={classNames(cls.Page, {}, [className])}
       onScroll={handleScroll}
       ref={wrapperRef}
     >
       {children}
       {onScrollEnd ? <div ref={triggerRef} className={cls.trigger} /> : null}
-    </section>
+    </main>
   );
 });

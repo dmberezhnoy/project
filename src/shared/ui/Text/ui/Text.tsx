@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { maxHeaderSize } from 'http';
+
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import cls from './Text.module.scss';
@@ -22,6 +24,14 @@ export enum TextSize {
   L = 'size_l',
 }
 
+type HeaderTagType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+
+const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
+  [TextSize.S]: 'h3',
+  [TextSize.M]: 'h2',
+  [TextSize.L]: 'h1',
+};
+
 interface ITextProps {
   className?: string;
   title?: string;
@@ -41,9 +51,11 @@ export const Text = React.memo(({
 }: ITextProps) => {
   const additionalClassNames = [className, cls[theme], cls[align], cls[size]];
 
+  const HeaderTag = mapSizeToHeaderTag[size];
+
   return (
     <div className={classNames('', {}, additionalClassNames)}>
-      {title && <p className={cls.title}>{title}</p>}
+      {title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
       {text && <p className={cls.text}>{text}</p>}
     </div>
   );

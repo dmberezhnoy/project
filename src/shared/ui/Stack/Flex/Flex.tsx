@@ -4,21 +4,10 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 import cls from './Flex.module.scss';
 
-export type FlexJustify = 'center' | 'start' | 'end' | 'between';
-export type FlexAlign = 'center' | 'start' | 'end';
-export type FlexDirection = 'row' | 'column';
-export type FlexGap = '4' | '8' | '16' | '32';
-
-export interface IFlexProps {
-    children: React.ReactNode;
-    direction: FlexDirection;
-    justify?: FlexJustify;
-    align?: FlexAlign;
-    gap?: FlexGap;
-    wrap?: boolean;
-    maxWidth?: boolean;
-    className?: string;
-}
+type FlexJustify = 'center' | 'start' | 'end' | 'between';
+type FlexAlign = 'center' | 'start' | 'end';
+type FlexDirection = 'row' | 'column';
+type FlexGap = '4' | '8' | '16' | '32';
 
 const justifyClasses: Record<FlexJustify, string> = {
   center: cls.justifyCenter,
@@ -45,6 +34,18 @@ const gapClasses: Record<FlexGap, string> = {
   32: cls.gap32,
 };
 
+export interface IFlexProps {
+  children: React.ReactNode;
+  direction: FlexDirection;
+  justify?: FlexJustify;
+  align?: FlexAlign;
+  gap?: FlexGap;
+  wrap?: boolean;
+  maxWidth?: boolean;
+  className?: string;
+  tag?: keyof HTMLElementTagNameMap;
+}
+
 export const Flex = React.memo((props: IFlexProps) => {
   const {
     className,
@@ -55,6 +56,7 @@ export const Flex = React.memo((props: IFlexProps) => {
     gap = '8',
     wrap = false,
     maxWidth = false,
+    tag,
   } = props;
 
   const classes = [
@@ -70,9 +72,11 @@ export const Flex = React.memo((props: IFlexProps) => {
     [cls.wrap]: wrap,
   };
 
+  const SemanticTag = tag || 'div';
+
   return (
-    <div className={classNames(cls.Flex, mods, classes)}>
+    <SemanticTag className={classNames(cls.Flex, mods, classes)}>
       {children}
-    </div>
+    </SemanticTag>
   );
 });

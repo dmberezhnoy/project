@@ -24,7 +24,7 @@ export const Sidebar = React.memo(({ className }: ISidebarProps) => {
   };
 
   return (
-    <menu data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.collapsed]: isCollapsed }, [className])}>
+    <section data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.collapsed]: isCollapsed }, [className])}>
       <Button
         square
         data-testid="sidebar-toggle"
@@ -35,7 +35,7 @@ export const Sidebar = React.memo(({ className }: ISidebarProps) => {
       >
         {isCollapsed ? '>' : '<'}
       </Button>
-      <VStack className={cls.linksWrapper} gap="16" align="start">
+      <VStack gap="16" align="start" tag="nav" className={cls.linksWrapper}>
         {sidebarItemsList.map((item) => (
           <SidebarItem item={item} key={item.path} isCollapsed={isCollapsed} />
         ))}
@@ -44,6 +44,6 @@ export const Sidebar = React.memo(({ className }: ISidebarProps) => {
         <ThemeSwitcher />
         <LangSwitcher />
       </VStack>
-    </menu>
+    </section>
   );
 });
