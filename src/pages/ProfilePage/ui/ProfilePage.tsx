@@ -20,6 +20,7 @@ import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
+import { VStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
 import { Page } from 'widgets/Page';
@@ -69,21 +70,23 @@ const ProfilePage = () => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames('', {}, [])}>
-        <ProfilePageHeader />
-        {!!validateErrors?.length && validateErrors.map((err) => (
-          <Text
-            theme={TextTheme.ERROR}
-            text={validateProfileErrorTranslates[err]}
-            key={err}
+        <VStack gap="16" maxWidth>
+          <ProfilePageHeader />
+          {!!validateErrors?.length && validateErrors.map((err) => (
+            <Text
+              theme={TextTheme.ERROR}
+              text={validateProfileErrorTranslates[err]}
+              key={err}
+            />
+          ))}
+          <ProfileCard
+            profile={profileData}
+            isLoading={isLoading}
+            readonly={readonly}
+            error={error}
+            onChangeController={handleController}
           />
-        ))}
-        <ProfileCard
-          profile={profileData}
-          isLoading={isLoading}
-          readonly={readonly}
-          error={error}
-          onChangeController={handleController}
-        />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );

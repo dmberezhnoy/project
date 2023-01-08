@@ -6,12 +6,10 @@ import {
   getProfileData, getProfileReadonly, profileActions, updateProfileData,
 } from 'entities/Profile';
 import { getUserAuthData } from 'entities/User';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { HStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text';
-
-import cls from './ProfilePageHeader.module.scss';
 
 interface IProfilePageHeaderProps {
     className?: string;
@@ -37,22 +35,22 @@ export const ProfilePageHeader: React.FC<IProfilePageHeaderProps> = ({ className
   }, [dispatch]);
 
   return (
-    <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+    <HStack className={className} justify="between" maxWidth>
       <Text title={t('Профиль')} />
       {isEditPermission && (
-        <div className={cls.actions}>
+        <div>
           {
             readonly
               ? <Button theme={ButtonTheme.OUTLINE} onClick={handleEditProfile}>{t('Редактировать')}</Button>
               : (
-                <div className={cls.actions}>
+                <HStack>
                   <Button theme={ButtonTheme.OUTLINE_ATTENTION} onClick={handleCancelEditProfile}>{t('Отменить')}</Button>
                   <Button theme={ButtonTheme.OUTLINE} onClick={handleSaveProfile}>{t('Сохранить')}</Button>
-                </div>
+                </HStack>
               )
           }
         </div>
       )}
-    </div>
+    </HStack>
   );
 };

@@ -10,6 +10,7 @@ import { useAppDispatch } from 'shared/lib/hooks';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { Skeleton } from 'shared/ui/Skeleton';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text';
 import { TextAlign, TextSize } from 'shared/ui/Text/ui/Text';
 
@@ -60,13 +61,13 @@ export const ArticleDetails = React.memo((props: IArticleDetailsProps) => {
   let content;
   if (isLoading) {
     content = (
-      <div className={cls.loadingWrapper}>
+      <VStack gap="16" align="start" maxWidth>
         <Skeleton width={200} height={200} borderRadius="50%" className={cls.avatar} />
         <Skeleton width={300} height={32} />
         <Skeleton width={600} height={24} />
         <Skeleton width="100%" height={200} />
         <Skeleton width="100%" height={200} />
-      </div>
+      </VStack>
     );
   } else if (error) {
     content = (
@@ -78,25 +79,25 @@ export const ArticleDetails = React.memo((props: IArticleDetailsProps) => {
   } else {
     content = (
       <>
-        <div className={cls.avatarWrapper}>
+        <HStack justify="center" maxWidth>
           <Avatar size={200} src={article?.img} />
-        </div>
+        </HStack>
         <Text
           title={article?.title}
           text={article?.subtitle}
           size={TextSize.L}
         />
-        <div className={cls.articleInfo}>
+        <HStack>
           <Icon Svg={OpenEyeIcon} />
           <Text text={String(article?.views)} />
-        </div>
-        <div className={cls.articleInfo}>
+        </HStack>
+        <HStack>
           <Icon Svg={CalendarIcon} />
           <Text text={article?.createdAt} />
-        </div>
-        <div className={cls.blocksWrapper}>
+        </HStack>
+        <VStack gap="16" maxWidth align="start">
           {article?.blocks.map(renderBlock)}
-        </div>
+        </VStack>
       </>
     );
   }

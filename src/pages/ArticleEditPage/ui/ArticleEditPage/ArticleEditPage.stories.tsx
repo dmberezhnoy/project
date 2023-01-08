@@ -5,7 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import ArticleEditPage from './ArticleEditPage';
 
 export default {
-  title: 'shared/ArticleEditPage',
+  title: 'pages/ArticleEditPage',
   component: ArticleEditPage,
   argTypes: {},
 } as ComponentMeta<typeof ArticleEditPage>;

@@ -7,6 +7,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text';
 import { TextAlign, TextTheme } from 'shared/ui/Text/ui/Text';
 
@@ -47,31 +48,40 @@ export const ProfileCard = React.memo((props: IProfileCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+      <HStack
+        justify="center"
+        maxWidth
+        className={classNames(cls.ProfileCard, {}, [className, cls.loading])}
+      >
         <Loader />
-      </div>
+      </HStack>
     );
   }
 
   if (error) {
     return (
-      <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+      <HStack justify="center" maxWidth className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
         <Text
           theme={TextTheme.ERROR}
           align={TextAlign.CENTER}
           title={t('Произошла ошибка при загрузке профиля')}
           text={t('Попробуйте обновить страницу')}
         />
-      </div>
+      </HStack>
     );
   }
 
   return (
-    <div className={classNames(cls.ProfileCard, {}, [className])}>
+    <VStack
+      className={classNames(cls.ProfileCard, {}, [className])}
+      maxWidth
+      gap="8"
+      align="start"
+    >
       {profile?.avatar && (
-        <div className={cls.avatarWrapper}>
+        <HStack justify="center" maxWidth>
           <Avatar src={profile.avatar} />
-        </div>
+        </HStack>
       )}
       <Input
         value={profile?.firstName}
@@ -119,6 +129,6 @@ export const ProfileCard = React.memo((props: IProfileCardProps) => {
         onChange={onChangeController?.country}
         readonly={readonly}
       />
-    </div>
+    </VStack>
   );
 });

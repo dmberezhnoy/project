@@ -2,28 +2,10 @@
   min-height: 100%;
 }
 
-.loadingWrapper,
-.blocksWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
 .blocksWrapper {
   margin-top: 16px;
 }
 
 .avatar {
   align-self: center;
-}
-
-.avatarWrapper {
-  display: flex;
-  justify-content: center;
-}
-
-.articleInfo {
-  display: flex;
-  gap: 8px;
-  align-items: center;
 }

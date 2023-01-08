@@ -1,8 +1,7 @@
 import React, { useCallback } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
-
 import { Card, CardTheme } from '../../Card/Card';
+import { HStack } from '../../Stack';
 import cls from './Tabs.module.scss';
 
 export interface ITabItem {
@@ -19,7 +18,7 @@ interface ITabsProps {
 
 export const Tabs = React.memo((props: ITabsProps) => {
   const {
-    className,
+    className = '',
     tabs,
     value,
     onTabClick,
@@ -28,7 +27,7 @@ export const Tabs = React.memo((props: ITabsProps) => {
   const handleClickTab = useCallback((tab: ITabItem) => () => onTabClick(tab), [onTabClick]);
 
   return (
-    <div className={classNames(cls.Tabs, {}, [className])}>
+    <HStack className={className} wrap>
       { tabs.map((tab) => (
         <Card
           key={tab.value}
@@ -39,6 +38,6 @@ export const Tabs = React.memo((props: ITabsProps) => {
           {tab.content}
         </Card>
       ))}
-    </div>
+    </HStack>
   );
 });

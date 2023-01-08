@@ -4,6 +4,7 @@ import React, {
 
 import { classNames } from 'shared/lib/classNames/classNames';
 
+import { HStack } from '../Stack';
 import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
@@ -56,7 +57,7 @@ export const Input = React.memo((props: IInputProps) => {
   };
 
   return (
-    <div className={classNames(cls.InputWrapper, mods, [className])}>
+    <HStack className={classNames('', mods, [className])}>
       {placeholder && <div className={cls.placeholder}>{`${placeholder}>`}</div>}
       <div className={cls.caretWrapper}>
         <input
@@ -73,6 +74,6 @@ export const Input = React.memo((props: IInputProps) => {
         />
         {isVisibleCaret && (<span className={cls.caret} style={{ left: `${caretPosition * 9}px` }} />)}
       </div>
-    </div>
+    </HStack>
   );
 });

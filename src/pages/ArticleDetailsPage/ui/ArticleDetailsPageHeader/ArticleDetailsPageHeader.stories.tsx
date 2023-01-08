@@ -5,7 +5,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 
 export default {
-  title: 'shared/ArticleDetailsPageHeader',
+  title: 'pages/ArticleDetailsPageHeader',
   component: ArticleDetailsPageHeader,
   argTypes: {},
 } as ComponentMeta<typeof ArticleDetailsPageHeader>;

@@ -1,20 +1,9 @@
 .ProfileCard {
   padding: 20px;
   border: 2px solid var(--inverted-bg-color);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.avatarWrapper {
-  display: flex;
-  justify-content: center;
 }
 
 .loading,
 .error {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 150px;
+  height: 300px;
 }

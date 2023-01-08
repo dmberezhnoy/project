@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
+import { VStack } from 'shared/ui/Stack';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 
@@ -34,15 +35,15 @@ export const Sidebar = React.memo(({ className }: ISidebarProps) => {
       >
         {isCollapsed ? '>' : '<'}
       </Button>
-      <div className={cls.linksWrapper}>
+      <VStack className={cls.linksWrapper} gap="16" align="start">
         {sidebarItemsList.map((item) => (
           <SidebarItem item={item} key={item.path} isCollapsed={isCollapsed} />
         ))}
-      </div>
-      <div className={cls.switchers}>
+      </VStack>
+      <VStack className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher />
-      </div>
+      </VStack>
     </menu>
   );
 });
