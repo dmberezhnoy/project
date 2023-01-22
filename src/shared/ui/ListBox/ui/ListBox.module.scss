@@ -23,10 +23,26 @@
   border-radius: 12px;
   box-shadow: 2px 2px 8px var(--listbox-bg);
   min-width: 100%;
+}
 
-  &.top {
-    bottom: 100%;
-  }
+.optionsBottomLeft {
+  top: 100%;
+  right: 0;
+}
+
+.optionsBottomRight {
+  top: 100%;
+  left: 0;
+}
+
+.optionsTopRight {
+  left: 0;
+  bottom: 100%;
+}
+
+.optionsTopLeft {
+  right: 0;
+  bottom: 100%;
 }
 
 .item {

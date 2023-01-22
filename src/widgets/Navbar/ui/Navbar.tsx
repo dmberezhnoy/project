@@ -7,7 +7,9 @@ import { LoginModal } from 'features/AuthByUsername';
 import { RoutePath } from 'shared/config/routerConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
 
@@ -38,13 +40,20 @@ export const Navbar = React.memo(({ className }: INavbarProps) => {
         >
           {t('Создание статьи')}
         </AppLink>
-        <Button
-          onClick={handleLogout}
-          theme={ButtonTheme.CLEAR_INVERTED}
+        <Dropdown
           className={cls.actions}
-        >
-          {t('Выйти')}
-        </Button>
+          items={[
+            {
+              content: t('Профиль'),
+              href: RoutePath.profile + authData.id,
+            },
+            {
+              content: t('Выйти'),
+              onClick: handleLogout,
+            },
+          ]}
+          trigger={<Avatar size={30} src={authData.avatar} />}
+        />
         <LoginModal isOpen={isOpenLoginForm} onClose={handleCloseLoginForm} />
       </header>
     );

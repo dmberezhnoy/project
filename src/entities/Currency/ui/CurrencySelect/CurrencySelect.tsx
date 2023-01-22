@@ -37,7 +37,7 @@ export const CurrencySelect = React.memo((props: ICurrencySelectProps) => {
       defaultValue={t('Укажите валюту')}
       label={t('Укажите валюту')}
       className={className}
-      direction="top"
+      direction="top right"
     />
   );
 });
