@@ -1,10 +1,14 @@
 import { useTranslation } from 'react-i18next';
 
+import { Page } from 'widgets/Page';
+
 const MainPage = () => {
   const { t } = useTranslation('main');
 
   return (
-    <h1>{t('Основная страница')}</h1>
+    <Page>
+      <h1>{t('Основная страница')}</h1>
+    </Page>
   );
 };
 
