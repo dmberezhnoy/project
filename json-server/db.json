@@ -695,6 +695,27 @@
       "text": "ffs",
       "createdDate": "08.01.2023",
       "id": "pwSIV9o"
+    },
+    {
+      "articleId": "9",
+      "userId": "2",
+      "text": "23423",
+      "createdDate": "25.01.2023",
+      "id": "nHDxtW9"
+    },
+    {
+      "articleId": "9",
+      "userId": "2",
+      "text": "ggggg",
+      "createdDate": "25.01.2023",
+      "id": "kpSzICp"
+    },
+    {
+      "articleId": "16",
+      "userId": "2",
+      "text": "фыафыа",
+      "createdDate": "21.06.2023",
+      "id": "fKU0dwX"
     }
   ],
   "profile": [
@@ -715,7 +736,7 @@
       "lastName": "Тестович",
       "age": 25,
       "currency": "EUR",
-      "country": "Russia",
+      "country": "Belarus",
       "city": "Samara",
       "username": "usertest",
       "avatar": "https://coolsen.ru/wp-content/uploads/2021/06/17-7.jpg"

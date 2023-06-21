@@ -5,3 +5,4 @@ node_modules
 .idea
 .loki/report.json
 .loki/report.html
+/scripts/createSlice

@@ -16,11 +16,13 @@ import { IArticleDetailsPageSchema } from 'features/ArticleDetailsComments';
 import { ILoginSchema } from 'features/AuthByUsername';
 import { UISchema } from 'features/UI';
 import { IArticlesPageSchema } from 'pages/ArticlesPage';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface StateSchema {
     counter: ICounterSchema;
     user: IUserSchema;
     ui: UISchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
     // Async reducers
     loginForm?: ILoginSchema;
