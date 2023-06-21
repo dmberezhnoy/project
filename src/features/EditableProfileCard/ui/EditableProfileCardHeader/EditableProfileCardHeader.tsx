@@ -2,20 +2,22 @@ import React, { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import {
-  getProfileData, getProfileReadonly, profileActions, updateProfileData,
-} from 'entities/Profile';
 import { getUserAuthData } from 'entities/User';
 import { useAppDispatch } from 'shared/lib/hooks';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { HStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text';
 
-interface IProfilePageHeaderProps {
+import { getProfileData, getProfileReadonly } from '../../model/selectors';
+import { updateProfileData } from '../../model/services';
+import { profileActions } from '../../model/slice/profileSlice';
+
+interface IEditableProfileCardHeaderProps {
     className?: string;
 }
 
-export const ProfilePageHeader: React.FC<IProfilePageHeaderProps> = ({ className }) => {
+export const EditableProfileCardHeader = React.memo((props: IEditableProfileCardHeaderProps) => {
+  const { className } = props;
   const { t } = useTranslation('profile');
   const dispatch = useAppDispatch();
   const readonly = useSelector(getProfileReadonly);
@@ -53,4 +55,4 @@ export const ProfilePageHeader: React.FC<IProfilePageHeaderProps> = ({ className
       )}
     </HStack>
   );
-};
+});
