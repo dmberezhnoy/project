@@ -39,5 +39,5 @@ export const DynamicModuleLoader: React.FC<IDynamicModuleLoaderProps> = (props) 
     // eslint-disable-next-line
   }, []);
 
-  return <div>{children}</div>;
+  return <div style={{ width: '100%' }}>{children}</div>;
 };
