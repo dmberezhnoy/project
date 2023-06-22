@@ -5,8 +5,10 @@ import { Listbox as HListBox } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
 
-import { Button } from '../../Button/Button';
-import { HStack } from '../../Stack';
+import { Button } from '../../../Button/Button';
+import { HStack } from '../../../Stack';
+import { mapDirectionsClass } from '../../styles/consts';
+import popupCls from '../../styles/popup.module.scss';
 import cls from './ListBox.module.scss';
 
 export interface IListBoxItem {
@@ -26,13 +28,6 @@ interface IListBoxProps {
     direction?: DropdownDirection;
 }
 
-const mapDirectionsClass: Record<DropdownDirection, string> = {
-  'bottom left': cls.optionsBottomLeft,
-  'bottom right': cls.optionsBottomRight,
-  'top right': cls.optionsTopRight,
-  'top left': cls.optionsTopLeft,
-};
-
 const ListBox: React.FC<IListBoxProps> = (props) => {
   const {
     className, items, value, defaultValue, readonly, direction = 'bottom left', label, onChange,
@@ -47,7 +42,7 @@ const ListBox: React.FC<IListBoxProps> = (props) => {
       <HListBox
         as="div"
         disabled={readonly}
-        className={classNames(cls.ListBox, {}, [className])}
+        className={classNames(popupCls.popup, {}, [className])}
         value={value}
         onChange={onChange}
       >
@@ -64,8 +59,8 @@ const ListBox: React.FC<IListBoxProps> = (props) => {
             >
               {({ active, selected }) => (
                 <li className={classNames(cls.item, {
-                  [cls.active]: active,
-                  [cls.disabled]: item.disabled,
+                  [popupCls.active]: active,
+                  [popupCls.disabled]: item.disabled,
                 })}
                 >
                   {item.content}

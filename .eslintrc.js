@@ -63,6 +63,8 @@ module.exports = {
           'role',
           'tag',
           'as',
+          'border',
+          'borderRadius',
         ],
       },
     ],
