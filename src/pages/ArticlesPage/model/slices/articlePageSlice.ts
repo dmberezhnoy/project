@@ -6,7 +6,7 @@ import { ArticleTypes } from 'entities/Article/model/types';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const';
 import { SortOrder } from 'shared/types';
 
-import { fetchArticles } from '../services';
+import { fetchArticles } from '../services/fetchArticles';
 import { IArticlesPageSchema } from '../types/articlesPageSchema';
 
 const articlesAdapter = createEntityAdapter<IArticle>({
