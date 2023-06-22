@@ -42,7 +42,9 @@ export const NotificationButton = React.memo((props: INotificationButtonProps) =
       <MobileView>
         {popoverTrigger}
         <Drawer isOpen={isOpenDrawer} onClose={handleCloseDrawer}>
-          <NotificationList className={cls.notifications} />
+          <NotificationList
+            className={classNames(cls.notifications, {}, [cls.mobileNotifications])}
+          />
         </Drawer>
       </MobileView>
     </>

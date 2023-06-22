@@ -1,14 +1,7 @@
-import React,
-{
-  MutableRefObject,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { useModal } from 'shared/lib/hooks/useModal';
 
 import { Overlay } from '../../Overlay/Overlay';
 import { Portal } from '../../Portal';
@@ -16,7 +9,7 @@ import cls from './Modal.module.scss';
 
 interface IModalProps {
     className?: string;
-    children: ReactNode;
+    children: React.ReactNode;
     isOpen: boolean;
     onClose: () => void;
     lazy?: boolean;
@@ -31,35 +24,11 @@ export const Modal: React.FC<IModalProps> = ({
   onClose,
   lazy,
 }) => {
-  const [isMounted, setIsMounted] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
-  const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
-
-  useEffect(() => {
-    setIsMounted(isOpen);
-  }, [isOpen]);
-
-  const handleClose = useCallback(() => {
-    setIsClosing(true);
-    timerRef.current = setTimeout(() => {
-      onClose();
-      setIsClosing(false);
-    }, ANIMATION_DELAY);
-  }, [onClose]);
-
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') handleClose();
-  }, [handleClose]);
-
-  useEffect(() => {
-    if (isOpen) {
-      window.addEventListener('keydown', handleKeyDown);
-    }
-    return () => {
-      clearTimeout(timerRef.current);
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [isOpen, handleKeyDown]);
+  const { close, isClosing, isMounted } = useModal({
+    animationDelay: ANIMATION_DELAY,
+    onClose,
+    isOpen,
+  });
 
   const handleContentClick = (e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation();
 
@@ -73,7 +42,7 @@ export const Modal: React.FC<IModalProps> = ({
   return (
     <Portal>
       <div className={classNames(cls.Modal, mods, [className])}>
-        <Overlay onClick={handleClose}>
+        <Overlay onClick={close}>
           <div className={cls.content} onClick={handleContentClick}>
             {children}
           </div>
