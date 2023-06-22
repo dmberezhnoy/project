@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { Suspense, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
@@ -12,6 +12,7 @@ import {
 } from 'features/ArticleDetailsComments';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
+import { Loader } from 'shared/ui/Loader';
 import { VStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text';
 import { TextSize } from 'shared/ui/Text/ui/Text';
@@ -39,7 +40,9 @@ export const ArticleDetailsComments = React.memo((props: IArticleDetailsComments
   return (
     <VStack className={classNames('', {}, [className])} gap="8" maxWidth align="start">
       <Text size={TextSize.L} title={t('Комментарии')} />
-      <AddCommentForm onSendComment={handleSendComment} />
+      <Suspense fallback={<Loader />}>
+        <AddCommentForm onSendComment={handleSendComment} />
+      </Suspense>
       <CommentList comments={comments} isLoading={commentsIsLoading} />
     </VStack>
   );

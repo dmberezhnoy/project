@@ -38,11 +38,11 @@ const LoginForm = React.memo(({ className, onSuccessLogin }: ILoginFormProps) =>
 
   const dispatch = useAppDispatch();
 
-  const handleChangeUsername = useCallback((value) => {
+  const handleChangeUsername = useCallback((value: string) => {
     dispatch(loginActions.setUsername(value));
   }, [dispatch]);
 
-  const handleChangePassword = useCallback((value) => {
+  const handleChangePassword = useCallback((value: string) => {
     dispatch(loginActions.setPassword(value));
   }, [dispatch]);
 

@@ -3,6 +3,7 @@ import { addDecorator } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 import { StyleDecorator } from 'shared/config/storybook/StyleDecorator/StyleDecorator';
+import { SuspenseDecorator } from 'shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
 import ThemeDecorator from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
 export const parameters = {
@@ -15,9 +16,8 @@ export const parameters = {
   },
 };
 
-// @ts-ignore
 addDecorator(ThemeDecorator(Theme.LIGHT));
 // @ts-ignore
 addDecorator(StyleDecorator);
-// @ts-ignore
 addDecorator(RouterDecorator);
+addDecorator(SuspenseDecorator);
