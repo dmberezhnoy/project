@@ -4,10 +4,12 @@ export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelecto
 export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
 export { ArticleTypeSelector } from './ui/ArticleTypeSelector/ArticleTypeSelector';
 export {
-  IArticle,
-  IArticleDetailsSchema,
   ArticleView,
   ArticleSortField,
   ArticleTypes,
+} from './model/types';
+export type {
+  IArticle,
+  IArticleDetailsSchema,
 } from './model/types';
 export { getArticleDetailsData } from './model/selectors';
