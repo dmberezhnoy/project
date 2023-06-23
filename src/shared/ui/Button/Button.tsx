@@ -25,6 +25,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
     square?: boolean;
     theme?: ButtonTheme;
     size?: ButtonSize;
+    fullWidth?: boolean;
 }
 
 export const Button = React.memo((props: IButtonProps) => {
@@ -33,11 +34,13 @@ export const Button = React.memo((props: IButtonProps) => {
     children,
     theme = ButtonTheme.OUTLINE,
     square,
+    fullWidth,
     size = ButtonSize.M,
     ...restProps
   } = props;
 
   const classNameMods = {
+    [cls.fullWidth]: fullWidth,
     [cls.square]: square,
     [cls.disabled]: restProps.disabled,
   };

@@ -57,7 +57,7 @@ export const Input = React.memo((props: IInputProps) => {
   };
 
   return (
-    <HStack className={classNames('', mods, [className])}>
+    <HStack className={classNames(cls.Input, mods, [className])}>
       {placeholder && <div className={cls.placeholder}>{`${placeholder}>`}</div>}
       <div className={cls.caretWrapper}>
         <input

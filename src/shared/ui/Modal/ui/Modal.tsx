@@ -10,8 +10,8 @@ import cls from './Modal.module.scss';
 interface IModalProps {
     className?: string;
     children: React.ReactNode;
-    isOpen: boolean;
-    onClose: () => void;
+    isOpen?: boolean;
+    onClose?: () => void;
     lazy?: boolean;
 }
 
@@ -20,7 +20,7 @@ const ANIMATION_DELAY = 300;
 export const Modal: React.FC<IModalProps> = ({
   className,
   children,
-  isOpen,
+  isOpen = false,
   onClose,
   lazy,
 }) => {
