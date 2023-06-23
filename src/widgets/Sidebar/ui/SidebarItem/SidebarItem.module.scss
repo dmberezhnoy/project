@@ -6,4 +6,8 @@
 
 .icon {
   fill: var(--inverted-primary-color);
+
+  path {
+    fill: var(--inverted-primary-color);
+  }
 }
