@@ -42,11 +42,10 @@ export const Modal: React.FC<IModalProps> = ({
   return (
     <Portal>
       <div className={classNames(cls.Modal, mods, [className])}>
-        <Overlay onClick={close}>
-          <div className={cls.content} onClick={handleContentClick}>
-            {children}
-          </div>
-        </Overlay>
+        <Overlay onClick={close} />
+        <div className={cls.content} onClick={handleContentClick}>
+          {children}
+        </div>
       </div>
     </Portal>
   );

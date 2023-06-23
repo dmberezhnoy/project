@@ -6,7 +6,7 @@ import cls from './Overlay.module.scss';
 
 interface IOverlayProps {
     className?: string;
-    children: React.ReactNode;
+    children?: React.ReactNode;
     onClick?: () => void;
 }
 
