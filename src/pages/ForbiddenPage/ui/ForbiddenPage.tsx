@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Text } from 'shared/ui/Text';
-import { TextAlign, TextSize } from 'shared/ui/Text/ui/Text';
-import { Page } from 'widgets/Page';
+import { Text } from '@/shared/ui/Text';
+import { TextAlign, TextSize } from '@/shared/ui/Text/ui/Text';
+import { Page } from '@/widgets/Page';
 
 const ForbiddenPage = React.memo(() => {
   const { t } = useTranslation();

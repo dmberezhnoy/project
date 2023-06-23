@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 
-import { ArticleList } from 'entities/Article';
-import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
-import { Text } from 'shared/ui/Text';
-import { TextTheme } from 'shared/ui/Text/ui/Text';
+import { ArticleList } from '@/entities/Article';
+import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks';
+import { Text } from '@/shared/ui/Text';
+import { TextTheme } from '@/shared/ui/Text/ui/Text';
 
 import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors';
 import { initArticlesPage } from '../../model/services';

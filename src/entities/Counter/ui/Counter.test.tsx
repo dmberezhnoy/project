@@ -1,7 +1,7 @@
 import { userEvent } from '@storybook/testing-library';
 import { screen } from '@testing-library/react';
 
-import { ComponentRender } from 'shared/lib/tests/ComponentRender';
+import { ComponentRender } from '@/shared/lib/tests/ComponentRender';
 
 import { Counter } from './Counter';
 

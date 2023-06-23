@@ -74,9 +74,7 @@ module.exports = {
         groups: [
           ['^react'],
           ['^@?\\w'],
-          [
-            '^(app|entities|features|pages|shared|widgets)(/.*|$)',
-          ],
+          ['^(@\\/)\\w+'],
           ['^\\u0000'],
         ],
       },

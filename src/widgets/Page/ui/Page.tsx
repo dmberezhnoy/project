@@ -2,15 +2,15 @@ import React, { MutableRefObject, UIEvent, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
-import { StateSchema } from 'app/providers/StoreProvider';
-import { getUIScrollByPath, uiActions } from 'features/UI';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { getUIScrollByPath, uiActions } from '@/features/UI';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   useAppDispatch,
   useInfiniteScroll,
   useInitialEffect,
   useThrottle,
-} from 'shared/lib/hooks';
+} from '@/shared/lib/hooks';
 
 import cls from './Page.module.scss';
 

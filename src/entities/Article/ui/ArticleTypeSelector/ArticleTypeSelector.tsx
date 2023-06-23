@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ITabItem, Tabs } from 'shared/ui/Tabs';
+import { ITabItem, Tabs } from '@/shared/ui/Tabs';
 
 import { ArticleTypes } from '../../model/types';
 

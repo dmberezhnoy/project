@@ -1,10 +1,10 @@
 import React from 'react';
 
-import ListIcon from 'shared/assets/icons/list-icon.svg';
-import PlateIcon from 'shared/assets/icons/plate-icon.svg';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
-import { Icon } from 'shared/ui/Icon/Icon';
+import ListIcon from '@/shared/assets/icons/list-icon.svg';
+import PlateIcon from '@/shared/assets/icons/plate-icon.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Icon } from '@/shared/ui/Icon/Icon';
 
 import { ArticleView } from '../../model/types';
 import cls from './ArticleViewSelector.module.scss';

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Story } from '@storybook/react';
 
-import { Theme, ThemeProvider } from 'app/providers/ThemeProvider';
+import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
 
 const ThemeDecorator = (theme: Theme) => (Story: Story) => (
   <ThemeProvider initialTheme={theme}>

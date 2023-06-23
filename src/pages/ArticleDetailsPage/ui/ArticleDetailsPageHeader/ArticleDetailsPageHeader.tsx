@@ -3,11 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { getArticleDetailsData } from 'entities/Article';
-import { getCanEditArticle } from 'features/ArticleDetailsComments';
-import { RoutePath } from 'shared/config/routerConfig';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { HStack } from 'shared/ui/Stack';
+import { getArticleDetailsData } from '@/entities/Article';
+import { getCanEditArticle } from '@/features/ArticleDetailsComments';
+import { RoutePath } from '@/shared/config/routerConfig';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { HStack } from '@/shared/ui/Stack';
 
 interface IArticleDetailsPageHeaderProps {
     className?: string;

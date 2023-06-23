@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect } from 'react';
 
-import { useTheme } from 'app/providers/ThemeProvider';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useAnimationLibs } from 'shared/lib/components/AnimationProvider';
-import { useModal } from 'shared/lib/hooks/useModal';
+import { useTheme } from '@/app/providers/ThemeProvider';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import { useModal } from '@/shared/lib/hooks/useModal';
 
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal';

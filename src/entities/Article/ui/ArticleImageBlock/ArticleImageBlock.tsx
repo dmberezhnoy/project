@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { VStack } from 'shared/ui/Stack';
-import { Text } from 'shared/ui/Text';
-import { TextAlign } from 'shared/ui/Text/ui/Text';
+import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+import { TextAlign } from '@/shared/ui/Text/ui/Text';
 
 import { IArticleImageBlock } from '../../model/types';
 

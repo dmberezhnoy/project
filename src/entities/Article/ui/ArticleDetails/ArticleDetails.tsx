@@ -2,17 +2,17 @@ import React, { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import CalendarIcon from 'shared/assets/icons/calendar-icon.svg';
-import OpenEyeIcon from 'shared/assets/icons/eye-open-icon.svg';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { Skeleton } from 'shared/ui/Skeleton';
-import { HStack, VStack } from 'shared/ui/Stack';
-import { Text } from 'shared/ui/Text';
-import { TextAlign, TextSize } from 'shared/ui/Text/ui/Text';
+import CalendarIcon from '@/shared/assets/icons/calendar-icon.svg';
+import OpenEyeIcon from '@/shared/assets/icons/eye-open-icon.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+import { TextAlign, TextSize } from '@/shared/ui/Text/ui/Text';
 
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from '../../model/selectors';
 import { fetchArticleById } from '../../model/services';

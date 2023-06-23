@@ -1,15 +1,15 @@
 import React, { HTMLAttributeAnchorTarget } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import OpenEyeIcon from 'shared/assets/icons/eye-open-icon.svg';
-import { RoutePath } from 'shared/config/routerConfig';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Card } from 'shared/ui/Card/Card';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { Text } from 'shared/ui/Text';
+import OpenEyeIcon from '@/shared/assets/icons/eye-open-icon.svg';
+import { RoutePath } from '@/shared/config/routerConfig';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppLink } from '@/shared/ui/AppLink/AppLink';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Card } from '@/shared/ui/Card/Card';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { Text } from '@/shared/ui/Text';
 
 import {
   ArticleBlockTypes, ArticleView, IArticle, IArticleTextBlock,

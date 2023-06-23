@@ -3,7 +3,7 @@ import { useDispatch, useStore } from 'react-redux';
 
 import { Reducer } from '@reduxjs/toolkit';
 
-import { ReduxStoreWithManager, StateSchema, StateSchemaKey } from 'app/providers/StoreProvider';
+import { ReduxStoreWithManager, StateSchema, StateSchemaKey } from '@/app/providers/StoreProvider';
 
 export type ReducerList = {
   [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;

@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ArticleList, ArticleView } from 'entities/Article';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { VStack } from 'shared/ui/Stack';
-import { Text } from 'shared/ui/Text';
-import { TextSize } from 'shared/ui/Text/ui/Text';
+import { ArticleList, ArticleView } from '@/entities/Article';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+import { TextSize } from '@/shared/ui/Text/ui/Text';
 
 import { useGetArticleRecommendationsList } from '../../api/articleRecommendationsApi';
 

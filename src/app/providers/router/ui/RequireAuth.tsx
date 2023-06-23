@@ -2,10 +2,10 @@ import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
 
-import { getUserAuthData } from 'entities/User';
-import { getUserRoles } from 'entities/User/model/selectors/getUserRoles/getUserRoles';
-import { UserRole } from 'entities/User/model/types/user';
-import { RoutePath } from 'shared/config/routerConfig';
+import { getUserAuthData } from '@/entities/User';
+import { getUserRoles } from '@/entities/User/model/selectors/getUserRoles/getUserRoles';
+import { UserRole } from '@/entities/User/model/types/user';
+import { RoutePath } from '@/shared/config/routerConfig';
 
 interface IRequireAuthProps {
     children: JSX.Element;

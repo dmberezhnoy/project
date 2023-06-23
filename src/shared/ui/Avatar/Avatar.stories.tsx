@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import avatar from 'shared/assets/tests/avatar.jpg';
+import avatar from '@/shared/assets/tests/avatar.jpg';
 
 import { Avatar } from './Avatar';
 

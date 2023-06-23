@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks';
-import { Page } from 'widgets/Page';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks';
+import { Page } from '@/widgets/Page';
 
 import { fetchNextArticlesPage } from '../../model/services';
 import { articlePageReducer } from '../../model/slices/articlePageSlice';

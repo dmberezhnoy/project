@@ -7,11 +7,11 @@ import {
   isAdminRole,
   isManagerRole,
   userActions,
-} from 'entities/User';
-import { RoutePath } from 'shared/config/routerConfig';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Dropdown } from 'shared/ui/popups';
+} from '@/entities/User';
+import { RoutePath } from '@/shared/config/routerConfig';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Dropdown } from '@/shared/ui/popups';
 
 interface IAvatarDropdownProps {
     className?: string;

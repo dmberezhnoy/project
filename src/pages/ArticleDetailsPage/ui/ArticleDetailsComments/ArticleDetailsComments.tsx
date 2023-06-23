@@ -2,20 +2,20 @@ import React, { Suspense, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { CommentList } from 'entities/Comment';
-import { AddCommentForm } from 'features/AddCommentForm';
+import { CommentList } from '@/entities/Comment';
+import { AddCommentForm } from '@/features/AddCommentForm';
 import {
   addCommentForArticle,
   fetchCommentsByArticleId,
   getArticleComments,
   getArticleDetailsCommentsIsLoading,
-} from 'features/ArticleDetailsComments';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
-import { Loader } from 'shared/ui/Loader';
-import { VStack } from 'shared/ui/Stack';
-import { Text } from 'shared/ui/Text';
-import { TextSize } from 'shared/ui/Text/ui/Text';
+} from '@/features/ArticleDetailsComments';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks';
+import { Loader } from '@/shared/ui/Loader';
+import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+import { TextSize } from '@/shared/ui/Text/ui/Text';
 
 interface IArticleDetailsCommentsProps {
     className?: string;

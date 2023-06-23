@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { IThunkConfig } from 'app/providers/StoreProvider';
-import { IArticle } from 'entities/Article';
-import { ArticleTypes } from 'entities/Article/model/types';
-import { addQueryParams } from 'shared/lib/url/addQueryParams';
+import { IThunkConfig } from '@/app/providers/StoreProvider';
+import { IArticle } from '@/entities/Article';
+import { ArticleTypes } from '@/entities/Article/model/types';
+import { addQueryParams } from '@/shared/lib/url/addQueryParams';
 
 import {
   getArticlesPageNum,

@@ -2,7 +2,7 @@ import React, {
   InputHTMLAttributes, useEffect, useRef, useState,
 } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { HStack } from '../Stack';
 import cls from './Input.module.scss';
