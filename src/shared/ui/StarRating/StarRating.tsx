@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 
-import { Icon } from '@/shared/ui/Icon/Icon';
-
 import StarIcon from '../../assets/icons/star-icon.svg';
 import { classNames } from '../../lib/classNames/classNames';
+import { Icon } from '../Icon/Icon';
 import cls from './StarRating.module.scss';
 
 interface IStarRatingProps {

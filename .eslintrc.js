@@ -79,7 +79,7 @@ module.exports = {
         ],
       },
     ],
-    'lesson-plugin/path-checker': 'error',
+    'lesson-plugin/path-checker': ['error', { alias: '@' }],
   },
   globals: {
     __PROJECT__: true,
