@@ -4,9 +4,11 @@ import { useParams } from 'react-router-dom';
 
 import { ArticleDetails } from '@/entities/Article';
 import { articleDetailsPageReducer } from '@/features/ArticleDetailsComments';
+import { ArticleRating } from '@/features/ArticleRating';
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader';
+import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
 
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
@@ -34,10 +36,13 @@ const ArticleDetailsPage = () => {
       <Page
         className={classNames(cls.ArticleDetailsPage, {}, [])}
       >
-        <ArticleDetailsPageHeader />
-        <ArticleDetails id={id} />
-        <ArticleRecommendationsList />
-        <ArticleDetailsComments id={id} />
+        <VStack gap="32" maxWidth>
+          <ArticleDetailsPageHeader />
+          <ArticleDetails id={id} />
+          <ArticleRecommendationsList />
+          <ArticleRating articleId={id} />
+          <ArticleDetailsComments id={id} />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );

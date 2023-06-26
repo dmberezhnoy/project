@@ -786,6 +786,13 @@
       "text": "asff",
       "createdDate": "23.06.2023",
       "id": "VjTNenK"
+    },
+    {
+      "articleId": "12",
+      "userId": "1",
+      "text": "kjljkljkl",
+      "createdDate": "26.06.2023",
+      "id": "I3QAPQI"
     }
   ],
   "profile": [
@@ -830,6 +837,29 @@
         "USER"
       ],
       "avatar": "https://coolsen.ru/wp-content/uploads/2021/06/17-7.jpg"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "rate": 2,
+      "articleId": "2",
+      "userId": "1",
+      "feedback": "hjkjhk",
+      "id": "xJGmg7j"
+    },
+    {
+      "rate": 5,
+      "articleId": "3",
+      "userId": "1",
+      "feedback": "",
+      "id": "Hd1k1dF"
     }
   ]
 }

@@ -13,14 +13,18 @@ interface ICardProps extends HTMLAttributes<HTMLDivElement>{
     className?: string;
     children: React.ReactNode;
     theme?: CardTheme;
+    maxWidth?: boolean;
 }
 
 export const Card = React.memo((props: ICardProps) => {
   const {
-    className, children, theme = CardTheme.DEFAULT, ...restProps
+    className, children, theme = CardTheme.DEFAULT, maxWidth, ...restProps
   } = props;
   return (
-    <div className={classNames(cls.Card, {}, [className, cls[theme]])} {...restProps}>
+    <div
+      className={classNames(cls.Card, { [cls.maxWidth]: maxWidth }, [className, cls[theme]])}
+      {...restProps}
+    >
       {children}
     </div>
   );

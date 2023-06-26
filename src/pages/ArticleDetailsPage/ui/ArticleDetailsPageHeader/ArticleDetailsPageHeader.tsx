@@ -31,7 +31,7 @@ export const ArticleDetailsPageHeader = React.memo((props: IArticleDetailsPageHe
   }, [article?.id, navigate]);
 
   return (
-    <HStack className={className} justify="between">
+    <HStack className={className} justify="between" maxWidth>
       <Button theme={ButtonTheme.OUTLINE} onClick={handleBackToList}>{t('Назад к списку')}</Button>
       {canEditArticle && <Button theme={ButtonTheme.OUTLINE} onClick={handleEditArticle}>{t('Редактировать')}</Button>}
     </HStack>
