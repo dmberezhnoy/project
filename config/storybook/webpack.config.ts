@@ -16,6 +16,10 @@ export default ({ config }: {config: webpack.Configuration}) => {
   };
   config.resolve!.modules!.push(paths.src);
   config.resolve!.extensions!.push('.ts', '.tsx');
+  config.resolve!.alias = {
+    ...config.resolve!.alias,
+    '@': paths.src,
+  };
 
   // Для замены стандартного svg лоадера storybook
   // eslint-disable-next-line no-param-reassign
